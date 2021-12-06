@@ -56,12 +56,14 @@ public class MaterialES extends ElementStore{
 	public static final String MAT_MV_SUBMIT = "xpath=(.//*[normalize-space(text()) and normalize-space(.)='文件目录:'])[1]/following::button[1]";
 	
 	//报送
-//	public static final String MAT_
-//	public static final String MAT_
-//	public static final String MAT_
-//	public static final String MAT_
-//	public static final String MAT_
-//	public static final String MAT_
+	public static final String MAT_SUBMISSION_BTN = "//div[@id='app']/div/div[2]/section/section/main/div[2]/div[4]/div[2]/table/tbody/tr/td[8]/div/button[3]/i";
+	public static final String MAT_AUDITOR_BOX = "//div[2]/div/div/div/input";
+	public static final String MAT_AUDITOR_VALUE = "xpath=(.//*[normalize-space(text()) and normalize-space(.)='党员教育二处 - 黄启年'])[1]/following::li[1]";
+	public static final String MAT_SUBMISSION_SUBMIT = "xpath=(.//*[normalize-space(text()) and normalize-space(.)='预览:'])[1]/following::button[1]";
+
+	//删除
+	public static final String MAT_DEL_BTN = "//div[@id='app']/div/div[2]/section/section/main/div[2]/div[4]/div[2]/table/tbody/tr/td[8]/div/button[3]/span";
+	public static final String MAT_DEL_SUBMIT = "xpath=(.//*[normalize-space(text()) and normalize-space(.)='取消'])[1]/following::span[1]";
 //	public static final String MAT_
 //	public static final String MAT_
 //	public static final String MAT_

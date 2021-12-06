@@ -175,6 +175,13 @@ public class MaterialLib {
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='预览:'])[1]/following::button[1]")).click();
   }
   
+  //删除
+  @Test
+  public void deleteMaterial() throws Exception {
+    driver.get("http://139.186.122.21/cpms-p/#/material-list");
+    driver.findElement(By.xpath("//div[@id='app']/div/div[2]/section/section/main/div[2]/div[4]/div[2]/table/tbody/tr/td[8]/div/button[3]/span")).click();
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='取消'])[1]/following::span[1]")).click();
+  }
   @After
   public void tearDown() throws Exception {
     driver.quit();
