@@ -13,9 +13,9 @@ public class MaterialBussiness {
 	
 	@SuppressWarnings("static-access")
 	public void keyWordQuery(String keyWord) {
-		driver.findElement(bslib.parseObject(MaterialES.KEYWORD_TEXT)).clear();
-		driver.findElement(bslib.parseObject(MaterialES.KEYWORD_TEXT)).click();
-		driver.findElement(bslib.parseObject(MaterialES.KEYWORD_TEXT)).sendKeys(keyWord);
+		driver.findElement(bslib.parseObject(MaterialES.MAT_KEYWORD_TEXT)).clear();
+		driver.findElement(bslib.parseObject(MaterialES.MAT_KEYWORD_TEXT)).click();
+		driver.findElement(bslib.parseObject(MaterialES.MAT_KEYWORD_TEXT)).sendKeys(keyWord);
 	}
 
 }

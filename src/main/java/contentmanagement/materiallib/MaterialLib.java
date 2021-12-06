@@ -62,6 +62,119 @@ public class MaterialLib {
     driver.findElement(By.xpath("//div[@id='app']/div/div[2]/section/section/main/div/form/div[5]/div/button/span")).click();
   }
   
+  //上传视频文件
+  @Test
+  public void UploadFile() throws Exception {
+    driver.get("http://139.186.122.21/cpms-p/#/material-list");
+    driver.findElement(By.id("global-uploader-btn")).click();
+    driver.findElement(By.xpath("//input[@type='file']")).clear();
+    driver.findElement(By.xpath("//input[@type='file']")).sendKeys("");
+    driver.findElement(By.xpath("//main/form/div/div/div/input")).click();
+    driver.findElement(By.xpath("//main/form/div/div/div/input")).clear();
+    driver.findElement(By.xpath("//main/form/div/div/div/input")).sendKeys("小视频3");
+    driver.findElement(By.xpath("//main/form/div[2]/div/div/input")).click();
+    driver.findElement(By.xpath("//main/form/div[2]/div/div/input")).clear();
+    driver.findElement(By.xpath("//main/form/div[2]/div/div/input")).sendKeys("作者");
+    driver.findElement(By.xpath("//div[3]/div/div/input")).click();
+    driver.findElement(By.xpath("//div[3]/div/div/input")).clear();
+    driver.findElement(By.xpath("//div[3]/div/div/input")).sendKeys("13222222222");
+    driver.findElement(By.xpath("//div[4]/div/div/input")).click();
+    driver.findElement(By.xpath("//div[4]/div/div/input")).clear();
+    driver.findElement(By.xpath("//div[4]/div/div/input")).sendKeys("上报单位");
+    driver.findElement(By.xpath("//div[5]/div/div/div/input")).click();
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='上 传'])[1]/following::span[1]")).click();
+    driver.findElement(By.xpath("//div[6]/div/div/input")).click();
+    driver.findElement(By.xpath("//div[6]/div/div/input")).clear();
+    driver.findElement(By.xpath("//div[6]/div/div/input")).sendKeys("主要人物");
+    driver.findElement(By.xpath("//textarea")).click();
+    driver.findElement(By.xpath("//textarea")).clear();
+    driver.findElement(By.xpath("//textarea")).sendKeys("摘要");
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='取 消'])[1]/following::span[1]")).click();
+    driver.findElement(By.xpath("//div[@id='global-uploader']/div/div[3]/div/div/div/button/span/i")).click();
+  }
+  
+  //编辑视频素材
+  @Test
+  public void editVideoMaterial() throws Exception {
+    driver.get("http://139.186.122.21/cpms-p/#/material-list");
+    driver.findElement(By.xpath("//div[@id='app']/div/div[2]/section/section/main/div[2]/div[4]/div[2]/table/tbody/tr/td[8]/div/button")).click();
+    driver.findElement(By.xpath("//main/form/div/div/div/input")).click();
+    driver.findElement(By.xpath("//main/form/div/div/div/input")).clear();
+    driver.findElement(By.xpath("//main/form/div/div/div/input")).sendKeys("小视频1");
+    driver.findElement(By.xpath("//main/form/div[2]/div/div/input")).click();
+    driver.findElement(By.xpath("//main/form/div[2]/div/div/input")).clear();
+    driver.findElement(By.xpath("//main/form/div[2]/div/div/input")).sendKeys("作者1");
+    driver.findElement(By.xpath("//div[3]/div/div/input")).click();
+    driver.findElement(By.xpath("//div[3]/div/div/input")).clear();
+    driver.findElement(By.xpath("//div[3]/div/div/input")).sendKeys("13222222223");
+    driver.findElement(By.xpath("//div[4]/div/div/input")).click();
+    driver.findElement(By.xpath("//div[4]/div/div/input")).clear();
+    driver.findElement(By.xpath("//div[4]/div/div/input")).sendKeys("上报单位1");
+    driver.findElement(By.xpath("//div[5]/div/div/div/input")).click();
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='返回'])[1]/following::span[1]")).click();
+    driver.findElement(By.xpath("//div[6]/div/div/input")).click();
+    driver.findElement(By.xpath("//div[6]/div/div/input")).clear();
+    driver.findElement(By.xpath("//div[6]/div/div/input")).sendKeys("主要人物1");
+    driver.findElement(By.xpath("//textarea")).click();
+    driver.findElement(By.xpath("//textarea")).clear();
+    driver.findElement(By.xpath("//textarea")).sendKeys("摘要1");
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='预览:'])[1]/following::span[1]")).click();
+  }
+  
+  //编辑文稿素材
+  @Test
+  public void editTextMaterial() throws Exception {
+    driver.get("http://139.186.122.21/cpms-p/#/material-list");
+    driver.findElement(By.xpath("//div[@id='app']/div/div[2]/section/section/main/div[2]/div[4]/div[2]/table/tbody/tr[2]/td[8]/div/button/span")).click();
+    driver.findElement(By.xpath("//div[@id='pane-0']/div/div/div/div/input")).click();
+    driver.findElement(By.xpath("//div[@id='pane-0']/div/div/div/div/input")).clear();
+    driver.findElement(By.xpath("//div[@id='pane-0']/div/div/div/div/input")).sendKeys("党员教育二处1");
+    driver.findElement(By.xpath("//div[@id='pane-0']/div[2]/div/div/div/input")).click();
+    driver.findElement(By.xpath("//div[@id='pane-0']/div[2]/div/div/div/input")).clear();
+    driver.findElement(By.xpath("//div[@id='pane-0']/div[2]/div/div/div/input")).sendKeys("长度");
+    driver.findElement(By.xpath("//div[@id='pane-0']/div[3]/div/div/div/input")).click();
+    driver.findElement(By.xpath("//div[@id='pane-0']/div[3]/div/div/div/input")).clear();
+    driver.findElement(By.xpath("//div[@id='pane-0']/div[3]/div/div/div/input")).sendKeys("123456");
+    driver.findElement(By.xpath("//div[@id='pane-0']/div[4]/div/div/div/input")).click();
+    driver.findElement(By.xpath("//div[@id='pane-0']/div[4]/div/div/div/input")).clear();
+    driver.findElement(By.xpath("//div[@id='pane-0']/div[4]/div/div/div/input")).sendKeys("321");
+    driver.findElement(By.xpath("//div[@id='pane-0']/div[5]/div/div/div/input")).click();
+    driver.findElement(By.xpath("//div[@id='pane-0']/div[5]/div/div/div/input")).clear();
+    driver.findElement(By.xpath("//div[@id='pane-0']/div[5]/div/div/div/input")).sendKeys("13222222224");
+    driver.findElement(By.xpath("//div[@id='pane-0']/div[6]/div/div/div/input")).click();
+    driver.findElement(By.xpath("//div[@id='pane-0']/div[6]/div/div/div/input")).clear();
+    driver.findElement(By.xpath("//div[@id='pane-0']/div[6]/div/div/div/input")).sendKeys("12344");
+    driver.findElement(By.xpath("//div[@id='pane-0']/div[7]/div/div/div/div/input")).click();
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='取 消'])[1]/following::span[1]")).click();
+    driver.findElement(By.xpath("//div[@id='pane-0']/div[8]/div/div/div/textarea")).click();
+    driver.findElement(By.xpath("//div[@id='pane-0']/div[8]/div/div/div/textarea")).clear();
+    driver.findElement(By.xpath("//div[@id='pane-0']/div[8]/div/div/div/textarea")).sendKeys("123456666");
+    driver.findElement(By.id("tab-1")).click();
+    //保存按钮
+//    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='字数统计'])[1]/following::span[1]")).click();
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='当前已输入13个字符, 您还可以输入9987个字符。'])[1]/following::span[1]")).click();
+  }
+
+  //移动目录
+  @Test
+  public void moveMaterial() throws Exception {
+    driver.get("http://139.186.122.21/cpms-p/#/material-list");
+    driver.findElement(By.xpath("//div[@id='app']/div/div[2]/section/section/main/div[2]/div[4]/div[2]/table/tbody/tr/td[8]/div/button[2]/span")).click();
+    driver.findElement(By.xpath("//main/form/div/div/div/div/input")).click();
+    driver.findElement(By.xpath("//div/div/label/span/span")).click();
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='文件目录:'])[1]/following::button[1]")).click();
+  }
+  
+  //报送
+  @Test
+  public void submittedMaterial() throws Exception {
+    driver.get("http://139.186.122.21/cpms-p/#/material-list");
+    driver.findElement(By.xpath("//div[@id='app']/div/div[2]/section/section/main/div[2]/div[4]/div[2]/table/tbody/tr/td[8]/div/button[3]/i")).click();
+    driver.findElement(By.xpath("//div[2]/div/div/div/input")).click();
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='党员教育二处 - 黄启年'])[1]/following::li[1]")).click();
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='预览:'])[1]/following::button[1]")).click();
+  }
+  
   @After
   public void tearDown() throws Exception {
     driver.quit();
