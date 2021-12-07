@@ -6,6 +6,8 @@ import static org.junit.Assert.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import common.ElementStore;
+
 
 public class MaterialLib {
   private WebDriver driver;
@@ -13,6 +15,7 @@ public class MaterialLib {
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
   JavascriptExecutor js;
+
   @Before
   public void setUp() throws Exception {
     System.setProperty("webdriver.chrome.driver", "");
@@ -20,6 +23,7 @@ public class MaterialLib {
     baseUrl = "https://www.google.com/";
     driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     js = (JavascriptExecutor) driver;
+
   }
 
   //进入素材库页面
@@ -64,7 +68,7 @@ public class MaterialLib {
   
   //上传视频文件
   @Test
-  public void UploadFile() throws Exception {
+  public void uploadFile() throws Exception {
     driver.get("http://139.186.122.21/cpms-p/#/material-list");
     driver.findElement(By.id("global-uploader-btn")).click();
     driver.findElement(By.xpath("//input[@type='file']")).clear();
