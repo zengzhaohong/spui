@@ -23,7 +23,7 @@ public class MaterialBussiness {
 	}
 
 	@SuppressWarnings("static-access")
-	public void uploadFile(WebDriver p_driver,String videoUrl,String p_name,String p_author,String p_phone,String unit,String p_figure,String p_abstract) {
+	public void uploadFile(WebDriver p_driver,String videoUrl,String p_name,String p_author,String p_phone,String p_unit,String p_figure,String p_abstract) {
 		driver = p_driver;
 		driver.findElement(bslib.parseObject(MaterialES.MAT_UPLOAD_BTN)).click();
 		
@@ -43,27 +43,30 @@ public class MaterialBussiness {
 		
 		driver.findElement(bslib.parseObject(MaterialES.MAT_VIDEO_NAME)).click();
 		driver.findElement(bslib.parseObject(MaterialES.MAT_VIDEO_NAME)).clear();
-		
-		
-		
+		driver.findElement(bslib.parseObject(MaterialES.MAT_VIDEO_NAME)).sendKeys(p_name);
+				
 		driver.findElement(bslib.parseObject(MaterialES.MAT_VIDEO_AUTHOR)).click();
-		
+		driver.findElement(bslib.parseObject(MaterialES.MAT_VIDEO_AUTHOR)).clear();
+		driver.findElement(bslib.parseObject(MaterialES.MAT_VIDEO_AUTHOR)).sendKeys(p_author);;
 		
 		driver.findElement(bslib.parseObject(MaterialES.MAT_VIDEO_PHONE)).click();
-		
-		
+		driver.findElement(bslib.parseObject(MaterialES.MAT_VIDEO_PHONE)).clear();
+		driver.findElement(bslib.parseObject(MaterialES.MAT_VIDEO_PHONE)).sendKeys(p_phone);;
+				
 		driver.findElement(bslib.parseObject(MaterialES.MAT_VIDEO_UNIT)).click();
+		driver.findElement(bslib.parseObject(MaterialES.MAT_VIDEO_UNIT)).clear();
+		driver.findElement(bslib.parseObject(MaterialES.MAT_VIDEO_UNIT)).sendKeys(p_unit);;
 		
-		
-		driver.findElement(bslib.parseObject(MaterialES.MAT_VIDEO_ACTIVITIES)).click();
-		
+		driver.findElement(bslib.parseObject(MaterialES.MAT_VIDEO_ACTIVITIES)).click();		
 		driver.findElement(bslib.parseObject(MaterialES.MAT_VIDEO_ACTIVITIES_VALUE)).click();
 		
-		
 		driver.findElement(bslib.parseObject(MaterialES.MAT_VIDEO_FIGURE)).click();
+		driver.findElement(bslib.parseObject(MaterialES.MAT_VIDEO_FIGURE)).clear();
+		driver.findElement(bslib.parseObject(MaterialES.MAT_VIDEO_FIGURE)).sendKeys(p_figure);;
 		
-		
+		driver.findElement(bslib.parseObject(MaterialES.MAT_VIDEO_ABSTRACT)).click();
 		driver.findElement(bslib.parseObject(MaterialES.MAT_VIDEO_ABSTRACT)).clear();
+		driver.findElement(bslib.parseObject(MaterialES.MAT_VIDEO_ABSTRACT)).sendKeys(p_abstract);;
 		
 		driver.findElement(bslib.parseObject(MaterialES.MAT_VIDEO_SUBMIT)).click();
 	}
