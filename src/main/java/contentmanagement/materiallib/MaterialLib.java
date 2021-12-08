@@ -6,6 +6,7 @@ import static org.junit.Assert.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import common.BussinessLib;
 import common.ElementStore;
 
 
@@ -15,15 +16,18 @@ public class MaterialLib {
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
   JavascriptExecutor js;
+  private BussinessLib bslib = new BussinessLib();
 
   @Before
   public void setUp() throws Exception {
-    System.setProperty("webdriver.chrome.driver", "");
+	System.setProperty("webdriver.chrome.driver", "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver.exe");
     driver = new ChromeDriver();
-    baseUrl = "https://www.google.com/";
+    baseUrl = "http://139.186.122.21/sso-portal/#/launch";
+    driver.manage().window().maximize();
     driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-    js = (JavascriptExecutor) driver;
-
+    driver.get(baseUrl);
+//    js = (JavascriptExecutor) driver;
+    bslib.login(driver, "zengzhaohong", "1234qwer!");
   }
 
   //进入素材库页面
@@ -37,6 +41,7 @@ public class MaterialLib {
 
   //关键字查询
   @Test
+  @Ignore
   public void keyWordQuery() throws Exception{
 	    driver.findElement(By.xpath("//div[@id='app']/div/div[2]/section/section/main/div/form/div[2]/div/div/input")).click();
 	    driver.findElement(By.xpath("//div[@id='app']/div/div[2]/section/section/main/div/form/div[2]/div/div/input")).clear();
@@ -46,6 +51,7 @@ public class MaterialLib {
   
   //类型查询
   @Test
+  @Ignore
   public void typeQuery() throws Exception {
 	//视频查询
     driver.findElement(By.xpath("//div[@id='app']/div/div[2]/section/section/main/div/form/div[3]/div/div/div/input")).click();
@@ -55,6 +61,7 @@ public class MaterialLib {
   
   //来源查询
   @Test
+  @Ignore
   public void sourceQuery() throws Exception {
     //来源（快编）
     driver.findElement(By.xpath("//div[@id='app']/div/div[2]/section/section/main/div/form/div[4]/div/div/div/input")).click();
@@ -68,6 +75,7 @@ public class MaterialLib {
   
   //上传视频文件
   @Test
+  @Ignore
   public void uploadFile() throws Exception {
     driver.get("http://139.186.122.21/cpms-p/#/material-list");
     driver.findElement(By.id("global-uploader-btn")).click();
@@ -99,6 +107,7 @@ public class MaterialLib {
   
   //编辑视频素材
   @Test
+  @Ignore
   public void editVideoMaterial() throws Exception {
     driver.get("http://139.186.122.21/cpms-p/#/material-list");
     driver.findElement(By.xpath("//div[@id='app']/div/div[2]/section/section/main/div[2]/div[4]/div[2]/table/tbody/tr/td[8]/div/button")).click();
@@ -127,6 +136,7 @@ public class MaterialLib {
   
   //编辑文稿素材
   @Test
+  @Ignore
   public void editTextMaterial() throws Exception {
     driver.get("http://139.186.122.21/cpms-p/#/material-list");
     driver.findElement(By.xpath("//div[@id='app']/div/div[2]/section/section/main/div[2]/div[4]/div[2]/table/tbody/tr[2]/td[8]/div/button/span")).click();
@@ -161,6 +171,7 @@ public class MaterialLib {
 
   //移动目录
   @Test
+  @Ignore
   public void moveMaterial() throws Exception {
     driver.get("http://139.186.122.21/cpms-p/#/material-list");
     driver.findElement(By.xpath("//div[@id='app']/div/div[2]/section/section/main/div[2]/div[4]/div[2]/table/tbody/tr/td[8]/div/button[2]/span")).click();
@@ -171,6 +182,7 @@ public class MaterialLib {
   
   //报送
   @Test
+  @Ignore
   public void submittedMaterial() throws Exception {
     driver.get("http://139.186.122.21/cpms-p/#/material-list");
     driver.findElement(By.xpath("//div[@id='app']/div/div[2]/section/section/main/div[2]/div[4]/div[2]/table/tbody/tr/td[8]/div/button[3]/i")).click();
@@ -181,6 +193,7 @@ public class MaterialLib {
   
   //删除
   @Test
+  @Ignore
   public void deleteMaterial() throws Exception {
     driver.get("http://139.186.122.21/cpms-p/#/material-list");
     driver.findElement(By.xpath("//div[@id='app']/div/div[2]/section/section/main/div[2]/div[4]/div[2]/table/tbody/tr/td[8]/div/button[3]/span")).click();
