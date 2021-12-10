@@ -27,14 +27,14 @@ public class MaterialLib {
     driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     driver.get(baseUrl);
 //    js = (JavascriptExecutor) driver;
-    bslib.login(driver, "zengzhaohong", "1234qwer!");
+    bslib.login(driver, "zengzhaohong", "1234qwer!","GLSC");
   }
 
   //进入素材库页面
   @Test
   public void materialPage() throws Exception {
-    driver.get("http://139.186.122.21/cpms-p/#/material-list");
-    driver.findElement(By.xpath("//div[@id='app']/div/div/div/div/div/ul/div[3]/li/div/span")).click();
+//    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='发布系统'])[1]/following::div[4]")).click();
+//	bslib.jumpPage();
     driver.findElement(By.xpath("//div[@id='app']/div/div/div/div/div/ul/div[3]/li/div/span")).click();
     driver.findElement(By.xpath("//div[@id='app']/div/div/div/div/div/ul/div[3]/li/ul/div/a/li")).click();
   }
@@ -201,11 +201,11 @@ public class MaterialLib {
   }
   @After
   public void tearDown() throws Exception {
-    driver.quit();
-    String verificationErrorString = verificationErrors.toString();
-    if (!"".equals(verificationErrorString)) {
-      fail(verificationErrorString);
-    }
+//    driver.quit();
+//    String verificationErrorString = verificationErrors.toString();
+//    if (!"".equals(verificationErrorString)) {
+//      fail(verificationErrorString);
+//    }
   }
 
   private boolean isElementPresent(By by) {
